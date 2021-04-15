@@ -1,8 +1,8 @@
 'use strict';
 
 class Office {
-    constructor(room) {
-        this._rooms = [room]
+    constructor() {
+        this._rooms = []
     }
 
     list() {
@@ -12,5 +12,9 @@ class Office {
     add(room) {
         this.list().push(room)
         console.log(this.list())
+    }
+
+    availableRooms() {
+        return this._rooms.filter(room => room.availabilityStatus() === true);
     }
 }
